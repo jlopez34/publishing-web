@@ -1,17 +1,8 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
-    color: #333;
+    color: rgb(53, 52, 52);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,8 +33,8 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
-    color: white;
+    background-color: #4c4e4ee3;
+    color: rgb(156, 36, 36);
     font-weight: 600;
   }
 
@@ -88,255 +79,30 @@
     fill: #888;
   }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    all: unset;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 40px;
-    width: 200px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  svg#rocket {
-    width: 80px;
-    position: absolute;
-    left: -10px;
-    top: -24px;
-  }
-
-  svg#rocket-smoke {
-    height: calc(100vh - 95px);
-    position: absolute;
-    top: 10px;
-    right: 180px;
-    z-index: -10;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .terminal {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 6px;
-    padding-top: 45px;
-    margin-top: 8px;
-    overflow: hidden;
-    background-color: rgb(15, 15, 16);
-  }
-
-  .terminal::before {
-    content: "\2022 \2022 \2022";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: rgb(58, 58, 58);
-    color: #c2c3c4;
-    width: 100%;
-    font-size: 2rem;
-    line-height: 0;
-    padding: 14px 0;
-    text-indent: 4px;
-  }
-
-  .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: white;
-    padding: 0 1rem 1rem;
-    margin: 0;
-  }
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
-
-  .github-star-badge {
-    color: #24292e;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
-    margin-left: 4px;
-    font-weight: 600;
-  }
-
-  .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em;
-  }
-
-  .github-star-badge .material-icons {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-  }
-
-  svg#clouds {
-    position: fixed;
-    bottom: -160px;
-    left: -230px;
-    z-index: -10;
-    width: 1920px;
-  }
-
-  /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
-    }
-  }
-
-  @media screen and (max-width: 575px) {
-    svg#rocket-smoke {
-      display: none;
-      visibility: hidden;
-    }
-  }
 </style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    width="90"
+    alt="Hacker News"
+    src="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAVkAAACSCAMAAADYdEkqAAAA2FBMVEX/////ZgD/YgD/XgD/4db/XAD/WgD/rYT/VgD//fv/ZwD/+fb/iVf/cy3/9fH/lGX/jlv/dzb/49D/8eb/ciD/zKv/yrP/7+r/z7X/3cf/nGH/aw7/2c3/vqj/v5z/upD/hkL/qHb/eBX/j0v/tpn/bgD/1b//xqb/6tz/9ez/2sX/ch7/387/fDX/qoD/t4z/nWj/fTv/lFj/fS7/n3H/hUr/jUf/q4b/pXH/biP/kmD/gTH/xbL/dwD/zbz/h0j/k2r/sX7/r5D/17v/lVP/uIz/eyL/onz/rZCnAAAO3klEQVR4nO2de0PiOBfG28RW2iqjgIAyIhcp5SJ3HXV2x3X01e//jd4mOUnTiw4MBGY0zx+70lxof6TJOclJxjD/NOE942No1yBT0mRVSZNVJU1WlTRZVdJkVUmTVSVNVpU0WVXSZFVJk1UlTVaVNFlV0mRVSZNVJU1WlTRZVdJkVUmTVSVNVpU0WVXSZFVJk1UlTVaVNFlV0mRVSZNVJU1WlbLIVm+bVPvppAJLaT4G63E4ha9YsxpJuwaZUhbZkY2p7tJJVcSSaoX1OJzkaDXm6XrVSNo1yJSyyO5jmoQO00lVlyWV1iVr0XpqmiyXJru0NFlV0mRVSZNVJU1WlTRZVdJkVWkzZINC3/f7heIbT+0EBd/3C5LDtSRZWrBf6L2Xp1fwvQ9K9nR8MC11XLdWmt5feOkyhdHB4cB13cOr+zFPTpPNN5sjIsnjDcYH87Bg7fB68uRIFdZpzuY4Tyu/Lv1b/Ihkg3orhxFC9CpCFp7EG65X/W5DOk0+C7LJejfgUttjuDKcSQXtTjf6zc5oVmtaNIoTkqfzEclW5xjFK7QackfhTVA8Hc/9TLJNyIab0DrHNSyXQ+ZMoD1jv2Oj178ieT4i2V7bQqkaERqK7EMXp5Jz+xlkmzZLtRYMbDFdMx70E2S7NvtjGbIoF8mWq0a2lJK+krPjNxElWL/4xhXJ+jGyFzl+ewhFbTNsTBzsPA0+TO+myFb53Vzl2YU2/0WkmtG8KJM1By5cX4Isus47HsipHCMpoRIlOOR50FF0hWSW0eJzgycYX3+B9h2y4YOnBffDyHodeovYHEyn04FgG34/Va8V0cYWhnQ8LSTJ+i5LQg0YvZpw18idHhwdHPKS0CGcxX6vpfpZdCANgY5M9igvPTkl+yU+Ck+lb7PK0fU9O/01S5N9+0ahn62HBHBn5BeKvWKh3IByqEHvzRH1YHd2+c/55IW8hnhO6MXIBgMA2wlib4aJF36PmF7lObxF5SRZZFmt1r+BSrI/JILbI9t7wO6+MAacMR+GKuTjsAMf3WaPPJfj1QcIX1N6MtniA4Ct+VDRd7hwwWvOt1mPyjoLQRbVzqp5L08vKiMblKLc2yNrVF/6cskJK2lXKQCoBvsiPXCvWR8skXVmkM+qQi4fRpJRVHHxCkkVw6NaC8kMUUbWeN0JWSe+kAWvMSaNzYG+EtelDENo4BLZfZ7vUvw+rIEeyq5Xl+ZCbYksaspfrY5seSdk2Z32OIPgEAmyJzbceoZbJpEd85a97yQqeYyVYLTvAkOyZ7dD1qhtnixOiRtAEdlifXH0cP1lUSfPXChFZAEZsbHeJlvw+Ve1xaP3O/SKPYyVuKE1u08S2Zi3p5DsQrS0TZG9q18kVJ8kyAYzy6ImJ7ZyNz7v7SnZ/xDAe4fs4LEGb3Y7epx/WBp6acliDQfVd0A2Yrghsr/2FMIBTOo4kDkqRL2Bd4DeqiQi6wLY2KTXN268xQS3e7kDsvkDnl8h2bh3O8wlJgVeBiYn27tegqz0gOJxnNE73Twm3u+2yRo/+R1ti2yRuydhX2DboZNl8pa1MlnT4lNcvyA78XZAdu9uy2Tr/LU9bJ6c9k9uhR9IyDpH0M9mBhilyJqIW7PGJVTrZgjthKzBC2yL7HfuzsMj9urg/9MRDEZUt5+uJUaWTxEc8p+gzAriR7+aFjEYtk/2nDsz2yHrgKskPWFZ8hTqMMRnxN1JZFGtKqZjIA2sLjzOKki0fbJ8wmtLZAvgClxGybKnUADwg6zuQJDFZaPOXzVACd03uspyMYi2T9b5grZJ9hSqrkbJsqdgdLipKj3UI8whcLLEPnWEJQ6JMPuAZLdY1vbJGv9slWyQSwGQ26wY4PCMt9r8OAcuGSdLy/b4LKLJWMHLEHffnK7oVnZANmBFtjWCQbZGdCfyjAyfnyLv9QWB4Jw8hHaZW5bIgoNQhpvE8FANIO2KtV6jMIvGwu2RjQp92SrZZ7AE2vCIxQtOiE2sVsWSC865rVaOLW3ZZOU8sVqzzw1h1i75VLiJcfNHYbj3Y79lhz/KS2/bZPMisW9vk2xVLFCNTp6euq+8jXKyxkT68midzD5PkeX9gYlYu6zzBTYT252Oa7OZIKu5bbKeGJ0dc5tkvS8JD1/2weiNLTLcKUwWu5Jrt33+oGDVXpgoXZJ7E+uS9e6ktdnrd3uDa/Ennc3Y2rxBsROPCUDPpRhZw2smwxFMK70ORsQXetCMInDqqYImyoFLsi7Z8CWPFBuu0mQFyh9om2SN4EECgGr1mG1A5U9joRzYXdDOMkU2/xDvao29tpn42RpdoLM22TeVJrsQN0gmvNYl24QXpZZOKkOUgwuzrr2fLbLcjRC23VHBKHRYsuQ+FbszzLKEeVATTNYuy4ejycOCCJIA+9ipTlybFSS1T7piCeGZ5ZtvgeyB8LmNV7w+2XwFlE7yeJK40Xz1dnp8/HBbLYaXHEjNx8oE9cnN8fHx821VFOP1SO8irzkq7FW6zXZYcDob9ysSmXzyHogUkbV/8L979vpk/0opIosfxIfQftFkN0cW5cSnMtZkN0kW/+Qfhro32ChZ9EV8WiBNdoNkzZogdInXJduvg9Izq8MLltJ9a+50Z1JGlkdWhp/WbrMjG6zImE9Ndc6S8OFbmz12phXIOueXkcpyG8kii0ri43VuUzEyVmrB5ByWYI7/ZrLeYRT0Yx28O29AHK+csOu/boystKAKgqW2v5vsCvOzhCwWHm6ltDmyV4mu9jOSRdfiwuvmYhHRTTzpM5I1XeHh+huM8rQvYkmfkmzkLDhRkPXaZFEtFonxKcmarsgjdY5rRyaL1Seqz0nWznKn1o/5joZG47OSRdOML9xANL280eAtsr1iEATFd/d0LyWH1PNbFSkle5xymTZCFrlR2HY22aefs0an05kffTsRDwAOclV6IvCapaIOz8U+FsaLxiCs6OroW3dVuCrJSrtTIm1iB4gUYZVBNn8yR3R/IvF60QCCL5wGW2jpRAsTzjW9ZEshdCfMWbapax40eHA3qaj2PFzK1edSShYt0veyFlmxo41v4M4gG8xie4+RPWM7Ny6ZH2xHdsrpAFYGo7tkEVzM/rhwEwHkaKWz/ZSSNVF65WodsjWxIRnzCKsU2fIAJWpEtROSMGRbNnC0aYtHHA9E5+KxR0RkzX+csQw+yIy93QVZeZJrfbLomG8pCrvaIJusn+YRZibtNBVN7zX47y9GxD7QH0XxNrFt5zg5bbEzsuhqo2QPjZEIIG73ssiKvcjIrd3d1QAJeiGpTZZV7Foqij5GnAFxzvLbfYEdmfObm5uSS2vCs+XBKiZrmqmeac1IDrH1wFpkkYXuApUuT8M7D7p8KD0zRHitCNUcR/M8cJfePWvWnbD1QsToNQtACOr3/BSTP4QsSlkHa5Idim7UekqT5RtAr/h2Q++W7000YD9nNKw+iMexoDuosPMPUNg0/8eGsmhqzau+2D+NFaSa7EHSpF03+qgq+oPBMEmWd6VyvDyLDJK3bUEoSyHavYrmLG8ffhifB4yi/6S7KDZXMmkVkzVREtTacV0zgbaRJPuVJdhyaDZr5NSM5Xtk2Dd0GTv6X+h7WU9MY8SAbEk+v2u1pTbVZHHyDVqbbK8h+oP9BNlbRmYee08WiNOG4Y3ZXd6MEp/RXWLQabFemi478+3P1nM5KK7kIWyLLHI3TdY4FXlDaypGlu0Hw6NY4ROaA9+S8FpG7ju5XKFBjFb1GxI3X2BxjbTX9cVZP7bbWNSfVl8aVk3WtOJ71zcR5TkWvXinFyML4/m8Let7hBO2IyGSl+0Ow8Yp6yxIz9wFm4t0p8LYNalFaw7a1YxJkJ2Sjc35bYasMxGW++RSIhvwLTBZm7rJ6euBdMIBJYduDIc2VNJZwGYl1KJfUo0HeSNkzbt/zrwBzTmNe7ibiEyGeONQbsmMyJ6+V3WNtERmVeFXcoAM+Yv4iGeA2ChCZwITNN3EYXQh3NkfZM+GigI+N0bW6KfmBn5JlrrDrCISnE3ffGqeMTPOKhpD6Cv4DfipY+Xw9xXsrvcfMx5vsPwOEJksaSGbJpueV6S9QeyEuaQI2T3Y1LzHLAZ6zxVqMeCuhJ0/RrWNEJabbsrS+W2y5KAAocTEfpRgJa/EZ0WQJetXh+0sR9abxethIxgY+o16lkhTAIvNqheZlUusAGYxoHvjhXUG3+RvDk6+Hc2RaLvZe3Z/i+z2teQOkGK8F2RkwTltvznSOK+sXbZ99n/qB7CO4aUAncFJokwv2OveYL7r3c+o9WOR5ZtqQLKnYOJhugrQE+SnR8SBUxtQNxfNWIqbbbk2YZtpMzP1Q5F1buVTNBjZH9Ds2m8+bpGfUEm/Cg7ggk32ibLd2IsP297ppNkHJytmDFkSm5HhBxo25f4geJSa4TNKf9WF9BuJE/uGtU4sJvdVuHIfn+ywJtkqbBaxzn2FhRjge+W5vBusG1EUZ8IFUtgYX4AM3QaE76OF3mAOY99nIGt0JSIw8/3CFzMGt8NKpVfxm6XQ4JIClipR9yysAC+aqRXLC3S2AZlXj8NK3vMqPkwLu8vH+m+B1WpaZXdoZHpxsqIdk12GrZbFNnWjK2F9e21B0U0dbmSKJbEeX5zAVuem3XbB7kL3y8/MqEe1olYhG4ht9mKF8Ulayo4MMyu9YCsfzemLhsz33Xbl7buiHjmE5GOTNYYcSbQq7g/SvgjuRHPhfb6UgKJh3hMnqIl4qXotXQ0yMw+r/JBkxVmxciRHO+aQkviWZ8nAdThFW1rhvuUnzERDfzDBCWcED1ZYE/9LyI5yNlV6r7gzY0m5kjQN9TSpYf5PVWD88hoPv2hCZUia+ejDtZzsYwT7V6ZUz3S8WmTXbjFmKIts8BWUTqpAyp48tDhB+fmF/IMFrZv9ftLTL/IS8jQe/4K4XxzsXTy3SD3/Nm79VcNIdw0ypU+yh3EH0mRVSZNVJU1WlTRZVdJkVUmTVSVNVpU0WVXSZFVJk1UlTVaVNFlV0mRVSZNVJU1WlTRZVdJkVUmTVSVNVpU0WVXSZFVJk1UlTVaVNFlV0mRVSZNVJU1WlTRZVdJkVemjkP0/S/iPZI0KmGYAAAAASUVORK5CYII="
   />
-  <span>Welcome</span>
+  <br/>
     <div class="spacer"></div>
-    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
+    <a aria-label="The Hacker News on twitter" target="_blank" rel="noopener" href="https://twitter.com/newsyc100" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
         <rect width="400" height="400" fill="none"/>
-        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
+        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#ff5733"/>
       </svg>
     </a>
-    <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://youtube.com/angular" title="YouTube">
+    <a aria-label="The Hacker News on YouTube" target="_blank" rel="noopener" href="https://www.youtube.com/c/thehackernews" title="YouTube">
       <svg id="youtube-logo" height="24" width="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
-        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path d="M0 0h24v24H0V0z" fill="#f90707"/>
         <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
       </svg>
     </a>
 </div>
 
-<div class="content" role="main">
-
-  
-
-</div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<div class="content" role="main"></div>
 <router-outlet></router-outlet>
