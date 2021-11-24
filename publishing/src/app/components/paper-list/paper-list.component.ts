@@ -1,14 +1,12 @@
-import {HttpClient} from '@angular/common/http';
 import {Component, ViewChild, AfterViewInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort, SortDirection} from '@angular/material/sort';
-import {merge, Observable, of as observableOf} from 'rxjs';
+import {MatSort} from '@angular/material/sort';
+import {merge, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Paper } from 'src/app/models/paper.model';
 import { PaperService } from "../../services/paper.service";
-/**
- * @title Table retrieving data through HTTP
- */
+
+
  @Component({
   selector: 'app-paper-list',
   styleUrls: ['./paper-list.component.css'],
@@ -32,7 +30,6 @@ export class PaperListComponent implements AfterViewInit {
 
   ngAfterViewInit() {
   
-    // If the user changes the sort order, reset back to the first page.
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
     this._paperService.getAll()
     merge(this.sort.sortChange, this.paginator.page)
@@ -43,7 +40,7 @@ export class PaperListComponent implements AfterViewInit {
           return this._paperService.getAll().pipe(catchError(() => observableOf(null)));
         }),
         map(data => {
-          // Flip flag to show that loading has finished.
+
           this.isLoadingResults = false;
           this.isRateLimitReached = data === null;
 
@@ -51,12 +48,22 @@ export class PaperListComponent implements AfterViewInit {
             return [];
           }
 
-          // Only refresh the result length if there is new data. In case of rate
-          // limit errors, we do not want to reset the paginator to zero, as that
-          // would prevent users from re-triggering requests.
+          this.resultsLength = data.length;
           return data;
         }),
       )
       .subscribe(data => (this.data = data));
+  }
+
+  onRemove(row: any) {
+    console.log('Row clicked to be removed: ', row);
+    this._paperService.remove(row)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.ngAfterViewInit();
+        },
+        error: (e) => console.error(e)
+      });
   }
 }
